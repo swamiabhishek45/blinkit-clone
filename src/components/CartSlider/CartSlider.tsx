@@ -26,10 +26,8 @@ interface UserDetails {
 export default function CartSlider() {
     const dispatch = useAppDispatch();
     const cartItems = useAppSelector(selectCartItems);
-    const isOpen = useAppSelector(selectCartIsOpen);
-    const subtotal = useAppSelector(selectCartSubtotal);
     const isAuthenticated = useAppSelector(selectIsAuthenticated);
-
+    
     const [step, setStep] = useState<CheckoutStep>('cart');
     const [userDetails, setUserDetails] = useState<UserDetails>({
         name: '',
@@ -37,7 +35,9 @@ export default function CartSlider() {
         address: '',
         pincode: '',
     });
-
+    
+    const isOpen = useAppSelector(selectCartIsOpen);
+    const subtotal = useAppSelector(selectCartSubtotal);
     const deliveryFee = subtotal > 200 ? 0 : 30;
     const total = subtotal + deliveryFee;
 
@@ -234,7 +234,6 @@ export default function CartSlider() {
                                     value={userDetails.pincode}
                                     onChange={handleInputChange}
                                     placeholder="Enter pincode"
-                                    required
                                     className="p-3 border-2 border-[#e0e0e0] rounded-lg text-[0.95rem] transition-colors duration-200 font-inherit focus:outline-none focus:border-[#0c831f]"
                                 />
                             </div>

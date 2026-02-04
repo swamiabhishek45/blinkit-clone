@@ -189,7 +189,6 @@ export default function AuthModal() {
                                     ref={(el) => { otpInputRefs.current[index] = el; }}
                                     type="text"
                                     inputMode="numeric"
-                                    maxLength={1}
                                     value={digit}
                                     onChange={(e) => handleOtpChange(index, e.target.value)}
                                     onKeyDown={(e) => handleOtpKeyDown(index, e)}
