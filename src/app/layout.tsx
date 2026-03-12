@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Blinkit Clone - Groceries Delivered in Minutes",
-  description: "Get groceries and essentials delivered to your door in minutes with Blinkit Clone",
+  title: "Blinkit Clone",
+  description: "grocery app",
 };
 
 export default function RootLayout({
